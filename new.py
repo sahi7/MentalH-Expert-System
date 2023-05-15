@@ -110,7 +110,7 @@ class Greetings(KnowledgeEngine):
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(fear_worry=W())),salience = 1)
 	def symptom_0(self):
-		self.declare(Fact(fear_worry= G01)
+		self.declare(Fact(fear_worry = G01)
 		
 		# input("fear_worry: "))
 		)
@@ -119,39 +119,39 @@ class Greetings(KnowledgeEngine):
 	@Rule(Fact(action='find_disease'), NOT(Fact(panic_attacks=W())),salience = 1)
 	def symptom_1(self):
 		self.declare(Fact(panic_attacks = G02
-		# input("back pain: ")
+		# input("panic_attacks: ")
 		))
 		
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(avoidance=W())),salience = 1)
 	def symptom_2(self):
-		self.declare(Fact(avoidance= G03
+		self.declare(Fact(avoidance = G03
 		# input("chest pain: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(trembling=W())),salience = 1)
 	def symptom_3(self):
-		self.declare(Fact(trembling= G04
+		self.declare(Fact(trembling = G04
 		# input("trembling: ")
 		))
 
-	@Rule(Fact(action='find_disease'), NOT(Fact(obsession=W())),salience = 1)
+	@Rule(Fact(action='find_disease'), NOT(Fact(compulsive=W())),salience = 1)
 	def symptom_4(self):
-		self.declare(Fact(obsession= G05
-		# input("obsession: ")
+		self.declare(Fact(compulsive = G05
+		# input("compulsive: ")
 		))
 
 		print(G05)
 
-	@Rule(Fact(action='find_disease'), NOT(Fact(appetite=W())),salience = 1)
+	@Rule(Fact(action='find_disease'), NOT(Fact(per_sadness=W())),salience = 1)
 	def symptom_5(self):
-		self.declare(Fact(appetite=G06
-		# input("appetite: ")
+		self.declare(Fact(per_sadness=G06
+		# input("per_sadness: ")
 		))
 
-	@Rule(Fact(action='find_disease'), NOT(Fact(dis_thinking=W())),salience = 1)
+	@Rule(Fact(action='find_disease'), NOT(Fact(appetite=W())),salience = 1)
 	def symptom_6(self):
-		self.declare(Fact(dis_thinking=G07
+		self.declare(Fact(appetite=G07
 		# input("sunken eyes: ")
 		))
 
@@ -167,16 +167,16 @@ class Greetings(KnowledgeEngine):
 		# input("mood_swings: ")
 		))
 
-	@Rule(Fact(action='find_disease'), NOT(Fact(sadness=W())),salience = 1)
+	@Rule(Fact(action='find_disease'), NOT(Fact(diff_emotions=W())),salience = 1)
 	def symptom_9(self):
-		self.declare(Fact(sadness=G10
+		self.declare(Fact(diff_emotions=G10
 		# input("sore throat: ")
 		))
 
-	@Rule(Fact(action='find_disease'), NOT(Fact(diff_emotions=W())),salience = 1)
+	@Rule(Fact(action='find_disease'), NOT(Fact(dis_thinking=W())),salience = 1)
 	def symptom_10(self):
-		self.declare(Fact(diff_emotions=G11
-		# input("diff_emotions: ")
+		self.declare(Fact(dis_thinking=G11
+		# input("dis_thinking: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(reck_behavior=W())),salience = 1)
@@ -191,25 +191,25 @@ class Greetings(KnowledgeEngine):
 		# input("relationships: ")
 		))
 
-	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="no"),Fact(trembling="no"),Fact(obsession="no"),Fact(sadness="no"),Fact(appetite="yes"),Fact(mood_swings="no"),Fact(interest_loss="no"),Fact(diff_emotions="yes"),Fact(dis_thinking="no"),Fact(reck_behavior="yes"),Fact(relationships="no"))
+	@Rule(Fact(action='find_disease'),Fact(fear_worry="yes"),Fact(panic_attacks="yes"),Fact(avoidance="yes"),Fact(trembling="yes"),Fact(compulsive="yes"),Fact(per_sadness="no"),Fact(appetite="no"),Fact(interest_loss="no"),Fact(mood_swings="no"),Fact(diff_emotions="no"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
 	def disease_0(self):
-		self.declare(Fact(disease="Jaundice"))
+		self.declare(Fact(disease="Anxiety Disorders"))
 
-	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="no"),Fact(trembling="no"),Fact(obsession="no"),Fact(sadness="no"),Fact(appetite="no"),Fact(mood_swings="yes"),Fact(interest_loss="no"),Fact(diff_emotions="no"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
+	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="no"),Fact(trembling="no"),Fact(compulsive="no"),Fact(per_sadness="yes"),Fact(appetite="yes"),Fact(interest_loss="yes"),Fact(mood_swings="yes"),Fact(diff_emotions="no"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
 	def disease_1(self):
-		self.declare(Fact(disease="Alzheimers"))
+		self.declare(Fact(disease="Mood Disorders"))
 
-	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="yes"),Fact(avoidance="no"),Fact(trembling="no"),Fact(obsession="no"),Fact(sadness="no"),Fact(appetite="yes"),Fact(mood_swings="no"),Fact(interest_loss="no"),Fact(diff_emotions="no"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
+	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="no"),Fact(trembling="no"),Fact(compulsive="no"),Fact(per_sadness="no"),Fact(appetite="no"),Fact(interest_loss="no"),Fact(mood_swings="no"),Fact(diff_emotions="yes"),Fact(dis_thinking="yes"),Fact(reck_behavior="yes"),Fact(relationships="yes"))
 	def disease_2(self):
-		self.declare(Fact(disease="Arthritis"))
+		self.declare(Fact(disease="Personality disorders"))
 
-	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="yes"),Fact(trembling="yes"),Fact(obsession="no"),Fact(sadness="no"),Fact(appetite="no"),Fact(mood_swings="no"),Fact(interest_loss="no"),Fact(diff_emotions="yes"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
+	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="yes"),Fact(trembling="yes"),Fact(compulsive="no"),Fact(per_sadness="no"),Fact(appetite="no"),Fact(interest_loss="no"),Fact(mood_swings="no"),Fact(diff_emotions="no"),Fact(dis_thinking="yes"),Fact(reck_behavior="no"),Fact(relationships="no"))
 	def disease_3(self):
-		self.declare(Fact(disease="Tuberculosis"))
+		self.declare(Fact(disease="Schizophrenia"))
 
-	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="yes"),Fact(trembling="yes"),Fact(obsession="no"),Fact(sadness="no"),Fact(appetite="no"),Fact(mood_swings="yes"),Fact(interest_loss="no"),Fact(diff_emotions="no"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
+	@Rule(Fact(action='find_disease'),Fact(fear_worry="no"),Fact(panic_attacks="no"),Fact(avoidance="yes"),Fact(trembling="yes"),Fact(compulsive="no"),Fact(per_sadness="no"),Fact(appetite="no"),Fact(interest_loss="no"),Fact(mood_swings="yes"),Fact(diff_emotions="no"),Fact(dis_thinking="no"),Fact(reck_behavior="no"),Fact(relationships="no"))
 	def disease_4(self):
-		self.declare(Fact(disease="Asthma"))
+		self.declare(Fact(disease="Substance Use Disorders"))
 
 
 
@@ -242,19 +242,19 @@ class Greetings(KnowledgeEngine):
 		  Fact(panic_attacks=MATCH.panic_attacks),
 		  Fact(avoidance=MATCH.avoidance),
 		  Fact(trembling=MATCH.trembling),
-		  Fact(obsession=MATCH.obsession),
-		  Fact(sadness=MATCH.sadness),
-		  Fact(appetite=MATCH.appetite),
+		  Fact(compulsive=MATCH.compulsive),
+		  Fact(diff_emotions=MATCH.diff_emotions),
+		  Fact(per_sadness=MATCH.per_sadness),
 		  Fact(interest_loss=MATCH.interest_loss),
 		  Fact(mood_swings=MATCH.mood_swings),
-		  Fact(diff_emotions=MATCH.diff_emotions),
 		  Fact(dis_thinking=MATCH.dis_thinking),
+		  Fact(appetite=MATCH.appetite),
 		  Fact(reck_behavior=MATCH.reck_behavior),
 		  Fact(relationships=MATCH.relationships),NOT(Fact(disease=MATCH.disease)),salience = -999)
 
-	def not_matched(self,fear_worry, panic_attacks, avoidance, trembling, obsession, sadness, appetite, mood_swings,interest_loss ,diff_emotions ,dis_thinking ,reck_behavior ,relationships):
+	def not_matched(self,fear_worry, panic_attacks, avoidance, trembling, compulsive, diff_emotions, per_sadness, mood_swings,interest_loss ,dis_thinking ,appetite ,reck_behavior ,relationships):
 		print("\nDid not find any disease that matches your exact symptoms")
-		lis = [fear_worry, panic_attacks, avoidance, trembling, obsession, sadness, appetite, mood_swings,interest_loss ,diff_emotions ,dis_thinking ,reck_behavior ,relationships]
+		lis = [fear_worry, panic_attacks, avoidance, trembling, compulsive, diff_emotions, per_sadness, mood_swings,interest_loss ,dis_thinking ,appetite ,reck_behavior ,relationships]
 		max_count = 0
 		max_disease = ""
 		for key,val in symptom_map.items():

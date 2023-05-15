@@ -102,7 +102,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Headache</string>
+      <string>Excessive fear or worry</string>
      </property>
     </widget>
     <widget class="QPushButton" name="d_button">
@@ -303,7 +303,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Back pain</string>
+      <string>Panic attacks</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G03">
@@ -329,7 +329,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Chest pain</string>
+      <string>Avoidance or fear of certain situations or objects</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G04">
@@ -355,7 +355,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Cough</string>
+      <string>Physical symptoms such as sweating, trembling, and rapid heartbeat</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G05">
@@ -381,7 +381,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Fainting</string>
+      <string>Obsessive or compulsive behaviors</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G06">
@@ -407,7 +407,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Fatigue</string>
+      <string>Persistent feelings of sadness or hopelessness</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G07">
@@ -433,7 +433,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Sunken eyes</string>
+      <string>Changes in appetite or sleep patterns</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G08">
@@ -459,7 +459,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Low body temperature</string>
+      <string>Changes in appetite or sleep patterns</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G09">
@@ -485,7 +485,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Restlessness</string>
+      <string>Persistent and fluctuating mood swings</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G10">
@@ -511,7 +511,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Sore throat</string>
+      <string>Difficulty regulating emotions</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G11">
@@ -537,7 +537,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Fever</string>
+      <string>Distorted thinking patterns</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G12">
@@ -563,7 +563,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Nausea</string>
+      <string>Impulsive or reckless behavior</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="G13">
@@ -589,7 +589,7 @@ padding-bottom:7px;
 }</string>
      </property>
      <property name="placeholderText">
-      <string>Blurred vision</string>
+      <string>Problems with relationships</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -612,7 +612,7 @@ padding-bottom:7px;
       <string notr="true">color:#fff;</string>
      </property>
      <property name="text">
-      <string>Hi! I am NG Paul, I am here to  make your health better.For that you'll have to answer a few questions about your conditions.Are you experiencing any of the following symptoms</string>
+      <string>Hi! I am NG Paul, I am here to  make your health better. For that you'll have to answer a few questions about your conditions.Are you experiencing any of the following symptoms</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
