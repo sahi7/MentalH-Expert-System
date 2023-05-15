@@ -1,0 +1,37 @@
+G05     diff_conc - Restlessness, irritability, and difficulty concentrating or sleeping
+G10	irritability - Irritability, fatigue, and difficulty concentrating
+
+
+G01	fear_worry - Excessive fear or worry
+G02	panic_attacks - Panic attacks
+G03	avoidance - Avoidance or fear of certain situations or objects
+G04	trembling - Physical symptoms such as sweating, trembling, and rapid heartbeat
+G05     obsession - Obsessive or compulsive behaviors
+
+Mood disorders
+G06 	sadness - Persistent feelings of sadness or hopelessness
+G07	appetite - Changes in appetite or sleep patterns
+G08	interest_loss - Loss of interest in activities once enjoyed
+G09     mood_swings - Persistent and fluctuating mood swings
+
+Personality disorders
+G10	diff_emotions - Difficulty regulating emotions
+G11	dis_thinking - Distorted thinking patterns
+G12	reck_behavior - Impulsive or reckless behavior
+G13	relationships - Problems with relationships
+G14     shyness - Extreme shyness and social withdrawal
+G15     rejection - Fear of criticism, rejection, or disapproval
+G16     empathy - Lack of empathy and disregard for the feelings of others
+
+Schizophrenia
+G16	hallucinations - Delusions, hallucinations, disordered thinking
+G17	motivation - Lack of motivation
+G18	communication - Difficulty communicating
+G19     organization - Difficulty with executive functioning, such as planning, organizing, and prioritizing
+
+Substance Use Disorders
+G20	drugs - Cravings for drugs or alcohol
+G21	withdrawal - Withdrawal symptoms
+G22	continued_use - Continued use despite negative consequences
+
+
