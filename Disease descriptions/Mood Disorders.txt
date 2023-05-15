@@ -1,6 +1,6 @@
 Mood disorders are a group of mental health conditions characterized by significant changes in mood, which can interfere with daily activities and personal relationships. There are several types of mood disorders, including:
 
-    Major Depressive Disorder (MDD): involves persistent and intense feelings of sadness or loss of interest in activities that were once enjoyable.
+    Major Depressive Disorder (MDD): it involves persistent and intense feelings of sadness or loss of interest in activities that were once enjoyable.
 
     Bipolar Disorder: involves episodes of depression and mania, which is characterized by elevated mood, grandiosity, decreased need for sleep, and increased energy.
 
