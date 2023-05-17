@@ -1,5 +1,5 @@
 from experta import *
-from PyQt5.QtWidgets import QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QMessageBox, QLabel
 from PyQt5.uic import loadUi
 import webbrowser
 from PyQt5.uic.uiparser import QtCore
@@ -126,7 +126,7 @@ class Greetings(KnowledgeEngine):
 	@Rule(Fact(action='find_disease'), NOT(Fact(avoidance=W())),salience = 1)
 	def symptom_2(self):
 		self.declare(Fact(avoidance = G03
-		# input("chest pain: ")
+		# input("avoidance: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(trembling=W())),salience = 1)
@@ -152,13 +152,13 @@ class Greetings(KnowledgeEngine):
 	@Rule(Fact(action='find_disease'), NOT(Fact(appetite=W())),salience = 1)
 	def symptom_6(self):
 		self.declare(Fact(appetite=G07
-		# input("sunken eyes: ")
+		# input("appetite: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(interest_loss=W())),salience = 1)
 	def symptom_7(self):
 		self.declare(Fact(interest_loss=G08
-		# input("low body temperature: ")
+		# input("interest_loss: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(mood_swings=W())),salience = 1)
@@ -170,7 +170,7 @@ class Greetings(KnowledgeEngine):
 	@Rule(Fact(action='find_disease'), NOT(Fact(diff_emotions=W())),salience = 1)
 	def symptom_9(self):
 		self.declare(Fact(diff_emotions=G10
-		# input("sore throat: ")
+		# input("diff_emotions: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(dis_thinking=W())),salience = 1)
@@ -182,7 +182,7 @@ class Greetings(KnowledgeEngine):
 	@Rule(Fact(action='find_disease'), NOT(Fact(reck_behavior=W())),salience = 1)
 	def symptom_11(self):
 		self.declare(Fact(reck_behavior=G12
-		# input("Nausea: ")
+		# input("reck_behavior: ")
 		))
 
 	@Rule(Fact(action='find_disease'), NOT(Fact(relationships=W())),salience = 1)
@@ -281,7 +281,7 @@ class HomeWindow(QMainWindow):
 
         self.d_button.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=12, xOffset=3, yOffset=3))
 
-
+        self.error_label = QLabel()
         self.cls_button.clicked.connect(self.close)
         # self.register_button.clicked.connect(self.go_to_register_page)
         self.d_button.clicked.connect(self.start_expert)
@@ -290,16 +290,28 @@ class HomeWindow(QMainWindow):
         self.popup = QMessageBox()
         self.popup.setWindowTitle("Failed")
 
-
-
         self.show()
 
+
+
     def start_expert(self):
+    	# Get the input field value
+        G03 = self.G01.text()
+
+        if G03.strip():  # Check if the input is not empty
+            self.error_label.clear()  # Clear any previous error message
+            # Process the submitted form data
+            print("Form submitted!")
+        else:
+            self.error_label.setText("Field is required")
+            self.error_label.setStyleSheet("color: red;")
+
+
 
 	    # print("Getting GUI data")
 
         object1 = Set_data(
-		self.G01.text(),
+		G01,
 		self.G02.text(),
 		self.G03.text(),
 		self.G04.text(),
@@ -325,12 +337,7 @@ class HomeWindow(QMainWindow):
         self.close()
         print(engine.facts)
 
-        # self.shortWind.set_info()
 
-		# print("Getting GUI data")
-	
-
-# class Set_data()
 
 
 class Set_data():
@@ -403,11 +410,7 @@ class ShortWindow(QMainWindow):
         self.treaty = TreatWindow()
         self.close()
 
-		# # disease_content.append(id_disease)
-		# # disease_content.append(disease_details)
-		# # disease_content.append(treatments)
-        #     self.disease_id.setText(disease_content[0])
-        #     self.desc.setText(disease_content[0])
+
 
 class TreatWindow(QMainWindow):
 
@@ -460,12 +463,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-	# preprocess()
-	# engine = Greetings()
-	# while(1):
-	# 	engine.reset()  # Prepare the engine for the execution.
-	# 	engine.run()  # Run it!
-	# 	print("Would you like to diagnose some other symptoms?")
-	# 	if input() == "no":
-	# 		exit()
-	# 	print(engine.facts)
