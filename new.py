@@ -399,6 +399,7 @@ class ShortWindow(QMainWindow):
         self.cls_button_2.clicked.connect(self.close)
      
         self.more.clicked.connect(self.start_treat)
+        self.back.clicked.connect(self.back_home)
         self.min_butto_2.clicked.connect(self.showMinimized)
 
 
@@ -408,6 +409,10 @@ class ShortWindow(QMainWindow):
 
     def start_treat(self):
         self.treaty = TreatWindow()
+        self.close()
+
+    def back_home(self):
+        self.treaty = HomeWindow()
         self.close()
 
 
