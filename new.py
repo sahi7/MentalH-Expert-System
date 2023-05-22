@@ -1,5 +1,5 @@
 from experta import *
-from PyQt5.QtWidgets import QMainWindow, QMessageBox, QLabel
+from PyQt5.QtWidgets import QMainWindow, QMessageBox, QLabel, QDesktopWidget
 from PyQt5.uic import loadUi
 import webbrowser
 from PyQt5.uic.uiparser import QtCore
@@ -287,10 +287,21 @@ class HomeWindow(QMainWindow):
         self.d_button.clicked.connect(self.start_expert)
         self.min_butto.clicked.connect(self.showMinimized)
 
+        self.setGeometry(0, 0, 1500, 1000)  # Set the initial size of the window
+
+        self.center_window()  # Center the window on the screen
+
         self.popup = QMessageBox()
         self.popup.setWindowTitle("Failed")
 
         self.show()
+
+
+    def center_window(self):
+        frame_geometry = self.frameGeometry()
+        center_point = QDesktopWidget().availableGeometry().center()
+        frame_geometry.moveCenter(center_point)
+        self.move(frame_geometry.topLeft())
 
 
 
@@ -394,6 +405,7 @@ class ShortWindow(QMainWindow):
         self.drop_widget.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=25, xOffset=0, yOffset=0))
 
         self.more.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=12, xOffset=3, yOffset=3))
+        self.back.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=12, xOffset=3, yOffset=3))
 
 
         self.cls_button_2.clicked.connect(self.close)
@@ -407,6 +419,10 @@ class ShortWindow(QMainWindow):
         self.disease_id.setText(id_disease)
         self.desc.setText(disease_details)
 
+        self.setGeometry(0, 0, 1500, 1000)  # Set the initial size of the window
+
+        self.center_window()  # Center the window on the screen
+
     def start_treat(self):
         self.treaty = TreatWindow()
         self.close()
@@ -414,6 +430,13 @@ class ShortWindow(QMainWindow):
     def back_home(self):
         self.treaty = HomeWindow()
         self.close()
+
+
+    def center_window(self):
+        frame_geometry = self.frameGeometry()
+        center_point = QDesktopWidget().availableGeometry().center()
+        frame_geometry.moveCenter(center_point)
+        self.move(frame_geometry.topLeft())
 
 
 
@@ -429,12 +452,13 @@ class TreatWindow(QMainWindow):
         self.drop_widget.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=25, xOffset=0, yOffset=0))
 
         self.end.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=12, xOffset=3, yOffset=3))
+        self.back.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=12, xOffset=3, yOffset=3))
 
 
         self.cls_button_2.clicked.connect(self.close)
 
         self.min_butto_2.clicked.connect(self.showMinimized)
-
+        self.back.clicked.connect(self.back_home)
         self.end.clicked.connect(self.close)
 
         self.popup = QMessageBox()
@@ -442,10 +466,27 @@ class TreatWindow(QMainWindow):
 
         self.show()
 
+        self.setGeometry(0, 0, 1500, 1000)  # Set the initial size of the window
+
+        self.center_window()  # Center the window on the screen
+
     
         # global disease_content,id_disease,disease_details,treatments
        
         self.treat.setText(treatments)
+
+
+    def back_home(self):
+        self.treaty = HomeWindow()
+        self.close()
+
+
+    
+    def center_window(self):
+        frame_geometry = self.frameGeometry()
+        center_point = QDesktopWidget().availableGeometry().center()
+        frame_geometry.moveCenter(center_point)
+        self.move(frame_geometry.topLeft())
 		
 
 
